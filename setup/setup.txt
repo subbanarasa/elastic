@@ -1,0 +1,18 @@
+https://chekkan.com/setting-up-elasticsearch-cluster-on-kubernetes-part-3-config-file/
+
+kubectl create -f .
+
+#To check elasticsearch
+http://127.0.0.1:9200/
+
+
+
+export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+echo Name of the Pod: $POD_NAME
+
+
+#Pro tip You can keep watching the progress of your pod creation using the command:
+kubectl get pods -w -l run=kibana
+
+
+https://tests4geeks.com/blog/elasticsearch-tutorial/
